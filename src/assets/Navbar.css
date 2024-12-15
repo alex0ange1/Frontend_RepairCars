@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+	background-color: #1e40af; /* Синий фон */
+	padding: 16px; /* Padding для отступов */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.navbar a:hover {
+	color: #f59e0b; /* Желтый цвет при наведении */
+}
+
+.navbar .logo {
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+}
+
+.navbar .menu {
+	display: flex;
+	gap: 16px;
+}
+
+.navbar .menu a {
+	padding: 8px 16px;
+	border-radius: 8px;
+}
+
+.navbar .menu a:hover {
+	background-color: #f59e0b; /* Желтый фон при наведении */
+}

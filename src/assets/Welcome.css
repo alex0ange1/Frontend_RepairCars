@@ -1,0 +1,77 @@
+/* Основной контейнер */
+.welcome-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #f3f4f6;
+	text-align: center;
+	padding: 20px;
+}
+
+/* Заголовок */
+.welcome-container h1 {
+	font-size: 36px;
+	font-weight: bold;
+	color: #1e40af; /* Синий цвет */
+	margin-bottom: 20px;
+}
+
+/* Описание */
+.welcome-container p {
+	font-size: 18px;
+	color: #4b5563; /* Тёмно-серый цвет */
+	margin-bottom: 40px;
+}
+
+/* Контейнер для кнопок */
+.welcome-container div {
+	display: flex;
+	gap: 20px; /* Расстояние между кнопками */
+}
+
+/* Кнопки */
+.welcome-container button {
+	background-color: #1e40af; /* Синий фон */
+	color: white;
+	font-size: 16px;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Эффект при наведении на кнопку */
+.welcome-container button:hover {
+	background-color: #2563eb; /* Более светлый синий при наведении */
+	transform: translateY(-2px); /* Легкое поднятие кнопки */
+}
+
+/* Стили для Link */
+.welcome-container button a {
+	text-decoration: none;
+	color: white;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+	.welcome-container {
+		padding: 10px;
+	}
+
+	.welcome-container h1 {
+		font-size: 28px;
+	}
+
+	.welcome-container p {
+		font-size: 16px;
+	}
+
+	.welcome-container div {
+		flex-direction: column;
+		gap: 15px;
+	}
+}
