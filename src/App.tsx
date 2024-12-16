@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import Navbar from './components/Navbar'
 import './App.css'
 import Welcome from './pages/Welcome'
+import Register from './components/Register'
+import Login from './components/Login'
 
 function App() {
 	return (
@@ -12,6 +14,8 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path='/' element={<Welcome />} />
+				<Route path='/register' element={<Register />} />
+				<Route path='/login' element={<Login />} />
 			</Routes>
 		</Router>
 	)
