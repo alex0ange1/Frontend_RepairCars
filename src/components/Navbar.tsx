@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 					<Link to='/orders'>Услуги</Link>
 				</li>
 				<li>
-					<Link to='/cooks'>Работники</Link>
+					<Link to='/workers'>Работники</Link>
 				</li>
 			</ul>
 		</nav>

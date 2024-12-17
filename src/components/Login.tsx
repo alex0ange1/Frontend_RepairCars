@@ -25,8 +25,7 @@ const Login = () => {
 			console.log(response)
 
 			localStorage.setItem('userId', response.user.id)
-			localStorage.setItem('userRole', response.user.role)
-			localStorage.setItem('customerId', response.customerId)
+			localStorage.setItem('userPhone', response.user.phone_number)
 			localStorage.setItem('userName', response.user.name)
 			localStorage.setItem('userEmail', response.user.email)
 		} catch (err: any) {
@@ -46,7 +45,7 @@ const Login = () => {
 					<label>Пароль</label>
 					<input type='password' value={password} onChange={e => setPassword(e.target.value)} required />
 				</div>
-				<button onClick={handleSubmit}>Войти</button>
+				<button onClick={handleSubmit}></button>
 			</div>
 
 			{/* Кнопка для перехода на страницу регистрации */}

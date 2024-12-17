@@ -1,51 +1,73 @@
 import React, { useState } from 'react'
 import '../assets/Register.css'
+import { registerUser } from '../services/RegisterService'
+import { useNavigate } from 'react-router-dom'
 
-const Register: React.FC = () => {
-	const [formData, setFormData] = useState({
-		username: '',
-		email: '',
-		password: '',
-		role: '',
-	})
-	const [error, setError] = useState('')
-	const [success, setSuccess] = useState('')
+const Register = () => {
+	const [first_name, setFName] = useState('')
+	const [last_name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const [phone_number, setPhoneNumber] = useState('')
+	const [dateOfBirth, setDateOfBirth] = useState('')
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-		const { name, value } = e.target
-		setFormData({ ...formData, [name]: value })
-	}
+	const navigate = useNavigate() // Инициализируем navigate
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault()
-		const { username, email, password, role } = formData
+	const handleRegister = async () => {
+		const payload = { first_name, last_name, email, password, phone_number: phone_number, date_of_birth: dateOfBirth }
+		try {
+			const response = await registerUser(payload)
+			setTimeout(() => {
+				navigate('/login') // Перенаправление на страницу логина
+			}, 2000)
 
-		if (!username || !email || !password || !role) {
-			setError('Все поля должны быть заполнены!')
-			setSuccess('')
-		} else {
-			setError('')
-			setSuccess('Вы успешно зарегистрировались!')
+			console.log(response)
+		} catch (err: any) {
+			console.error(err)
 		}
 	}
 
 	return (
 		<div className='register-container'>
-			<h1>Регистрация</h1>
-			{error && <div className='error-message'>{error}</div>}
-			{success && <div className='success-message'>{success}</div>}
-			<form onSubmit={handleSubmit}>
+			<h1>Зарегистрироваться</h1>
+			<div>
+				<label htmlFor='fullName'>Фамилия и имя</label>
+				<input
+					type='text'
+					id='fullName'
+					placeholder='Введите фамилию и имя через пробел'
+					onChange={e => {
+						const [first_name, last_name] = e.target.value.split(' ', 2) // Разделение по первому пробелу
+						setFName(first_name || '') // Устанавливаем фамилию
+						setName(last_name || '') // Устанавливаем имя
+					}}
+					required
+				/>
 				<div>
-					<input type='text' name='username' placeholder='Введите ваше имя' value={formData.username} onChange={handleChange} />
+					Email
+					<input type='email' value={email} onChange={e => setEmail(e.target.value)} required />
 				</div>
 				<div>
-					<input type='email' name='email' placeholder='Введите ваш email' value={formData.email} onChange={handleChange} />
+					Пароль
+					<input type='password' value={password} onChange={e => setPassword(e.target.value)} required />
 				</div>
 				<div>
-					<input type='password' name='password' placeholder='Введите пароль' value={formData.password} onChange={handleChange} />
+					Номер телефона
+					<input type='tel' placeholder='+1234567890' value={phone_number} onChange={e => setPhoneNumber(e.target.value)} required />
 				</div>
-				<button type='submit'>Зарегистрироваться</button>
-			</form>
+				<div>
+					Дата рождения
+					<input type='date' value={dateOfBirth} onChange={e => setDateOfBirth(e.target.value)} required />
+				</div>
+				<button type='button' onClick={handleRegister}>
+					Зарегистрироваться
+				</button>
+			</div>
+
+			{/* Кнопка для перехода на страницу логина */}
+			<div>
+				<button onClick={() => navigate('/login')}>Уже есть аккаунт?</button>
+			</div>
 		</div>
 	)
 }

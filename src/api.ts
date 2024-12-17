@@ -7,13 +7,4 @@ const api = axios.create({
 	},
 })
 
-export const getClients = async () => {
-	try {
-		const response = await api.get('/clients')
-		return response.data
-	} catch (error) {
-		console.error('Error fetching clients:', error)
-	}
-}
-
 export default api

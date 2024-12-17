@@ -1,4 +1,3 @@
-/* Register.css */
 .register-container {
 	max-width: 400px;
 	margin: 50px auto;
@@ -23,6 +22,16 @@
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
+}
+
+.register-container input[type='date'] {
+	font-size: 14px;
+	color: #555;
+}
+
+.register-container input[type='tel'] {
+	font-size: 14px;
+	color: #555;
 }
 
 .register-container button {
