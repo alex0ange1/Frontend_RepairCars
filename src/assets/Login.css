@@ -14,7 +14,7 @@
 }
 
 .login-container div {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .login-container input {
@@ -33,6 +33,7 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	margin-top: 15px;
 }
 
 .login-container button:hover {
@@ -47,4 +48,21 @@
 .success-message {
 	color: green;
 	text-align: center;
+}
+
+button {
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: #007bff;
+	color: white;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+	border: none;
+}
+
+button:hover {
+	background-color: #0056b3;
 }

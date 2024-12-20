@@ -53,3 +53,26 @@ button:hover {
 	text-align: center;
 	margin-bottom: 20px;
 }
+
+.date-picker-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px; /* Отступ между элементами */
+	margin-top: 20px;
+}
+
+.date-picker-container h3 {
+	margin-bottom: 8px; /* Отступ снизу заголовков */
+}
+
+.date-picker-container .date-field {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px; /* Отступ между меткой и вводом */
+}
+
+.date-picker-container .date-field input {
+	width: 200px; /* Ширина календаря */
+}

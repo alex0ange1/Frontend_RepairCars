@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import '../assets/Welcome.css' // Import the CSS file
 
 const Welcome = () => {
+	localStorage.setItem('isAuth', 'false')
+	console.log('adsf', localStorage.getItem('isAuth'))
 	return (
 		<div className='welcome-container'>
 			<h1>Добро пожаловать в АвтоДоктор!</h1>

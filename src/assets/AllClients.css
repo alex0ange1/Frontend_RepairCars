@@ -1,0 +1,120 @@
+.clients-container {
+	padding: 20px;
+	text-align: center;
+}
+
+.add-client-button {
+	margin: 20px 0;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.add-client-button:hover {
+	background-color: #0056b3;
+}
+
+.clients-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.clients-table th,
+.clients-table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+.clients-table th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+
+.clients-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.clients-table tr:hover {
+	background-color: #f1f1f1;
+	cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	width: 400px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+	margin-bottom: 20px;
+}
+
+.modal-content div {
+	margin-bottom: 10px;
+}
+
+.modal-content label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.modal-content input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.modal-actions {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.submit-button {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.submit-button:hover {
+	background-color: #218838;
+}
+
+.cancel-button {
+	background-color: #dc3545;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.cancel-button:hover {
+	background-color: #c82333;
+}
