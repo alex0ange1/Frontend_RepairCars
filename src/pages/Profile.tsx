@@ -35,22 +35,31 @@ const Profile: React.FC = () => {
 	const selector = useSelector(selectAuthToken)
 
 	useEffect(() => {
-		if (phone_number !== 'null') {
-			const loadProfile = async () => {
+		const loadProfile = async () => {
+			// Получаем токен и номер телефона из localStorage
+			const tokenFromStorage = localStorage.getItem('AuthToken')
+			const phoneFromStorage = localStorage.getItem('userPhone')
+
+			if (phoneFromStorage !== 'null' && tokenFromStorage) {
+				setLoading(true) // Устанавливаем состояние загрузки
 				try {
-					const data = await fetchClientProfile(access_token!, phone_number)
+					const data = await fetchClientProfile(tokenFromStorage!, phoneFromStorage!)
 					setProfile(data)
 					setEditedProfile(data) // Сохраняем данные для редактирования
 				} catch (err: any) {
 					setError('Не удалось загрузить профиль. Попробуйте позже.')
+					console.error('Ошибка загрузки профиля:', err)
 				} finally {
-					setLoading(false)
+					setLoading(false) // Завершаем состояние загрузки
 				}
+			} else {
+				setError('Данные авторизации отсутствуют. Пожалуйста, войдите заново.')
+				setLoading(false) // Останавливаем состояние загрузки
 			}
-
-			loadProfile()
 		}
-	}, [phone_number])
+
+		loadProfile()
+	}, [])
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (editedProfile) {

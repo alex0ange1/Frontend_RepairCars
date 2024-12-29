@@ -39,6 +39,7 @@ const Login = () => {
 			localStorage.setItem('AuthToken', response.access_token)
 			localStorage.setItem('isAuth', 'true')
 			console.log('!1!1', localStorage.getItem('isAuth'))
+			console.log('phone: ', localStorage.getItem('userPhone'))
 			navigate('/profile')
 		} catch (err: any) {
 			console.error('Login error:', err)

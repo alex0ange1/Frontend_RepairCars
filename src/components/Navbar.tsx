@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
 		dispatch(clearAuthToken())
 		dispatch(clearProfile())
 		localStorage.setItem('isAuth', 'false')
+		localStorage.removeItem('userPhone')
 		navigate('/login') // Перенаправляем на страницу входа
 	}
 
