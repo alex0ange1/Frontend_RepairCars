@@ -88,8 +88,8 @@ const Profile: React.FC = () => {
 
 		try {
 			// Преобразуем даты в формат ISO
-			const startDateISO = new Date(startDate).toISOString()
-			const endDateISO = new Date(endDate).toISOString()
+			const startDateISO = new Date(startDate).toISOString().split('T')[0]
+			const endDateISO = new Date(endDate).toISOString().split('T')[0]
 
 			const response = await getOrdersByDateRange(access_token!, startDateISO, endDateISO)
 
